@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introduction to browser events</title>
+        <meta charset = "UTF-8">
+        <style>
+            #field {
+              width: 200px;
+              border: 10px groove black;
+              background-color: #00FF00;
+              position: relative;
+            }
+        
+            #ball {
+              position: absolute;
+              transition: 1s all;
+            }
+          </style>
+    </head>
+    <body>
+        <div id="field">
+            <img src="https://en.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        </div>
+        <script>
+            const field = document.querySelector('#field');
+            const ball = document.querySelector('#ball');
+
+            
+
+            field.onclick = function () {
+                ball.width = '40';
+                ball.height = '40';
+
+                let xBall = ball.offsetWidth;
+                let yBall = ball.offsetHeight;
+                let xField = event.clientX;
+                let yField = event.clientY;
+                let x = xField - xBall;
+                let y = yField - yBall;
+                if(xField < xBall) {
+                    x = 0;
+                }
+                if (xField > field.clientWidth - xBall) {
+                    x = field.clientWidth - xBall;
+                }
+                if (yField < yBall) {
+                    y = 0;
+                }
+                if (yField > field.clientHeight - yBall) {
+                    y = field.clientHeight - yBall;
+                }
+                
+                ball.style.top = y + 'px';
+                ball.style.left = x + 'px';
+            }
+        </script>
+    </body>
+</html>

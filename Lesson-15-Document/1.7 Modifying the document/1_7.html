@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modifying the document</title>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <!-- createTextNode vs innerHTML vs textContent -->
+        <div></div>
+        <p></p>
+        <span></span>
+        <script src = '1_7.js'></script>
+
+        <!-- Create a function clear(elem) that removes everything from the element. -->
+        <ol id="elem">
+            <li>Hello</li>
+            <li>World</li>
+          </ol>
+          
+          <script>
+            function clear(elem) {
+                elem.innerHTML = '';
+            }
+            
+            let elem = document.querySelector('#elem');
+            
+            clear(elem); // clears the list
+          </script>
+
+        <!-- Create a list -->
+        <script src = 'list.js'></script>
+
+        <!-- Create a tree from the object -->
+        <script src = 'treeFromObject.js'></script>
+    </body>
+</html>

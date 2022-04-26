@@ -1,0 +1,23 @@
+        <!-- Task
+
+What does the script show? -->
+ 
+<html>
+
+<body>
+    <!-- What does this code show? -->
+
+    <script>
+        let body = document.body;
+      
+        body.innerHTML = "<!--" + body.tagName + "-->";
+      
+        console.log( body.firstChild.data ); // BODY
+      </script>
+
+  <script>
+    console.log(document.body.lastChild.nodeType);  //  1 (elem.nodeType == 1 for element nodes)
+  </script>
+</body>
+
+</html>

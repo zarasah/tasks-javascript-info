@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Element size and scrolling</title>
+        <meta charset = "UTF-8">
+        <style>
+            #field {
+              width: 200px;
+              border: 10px groove black;
+              background-color: #00FF00;
+              position: relative;
+            }
+        
+            #ball {
+              position: absolute;
+            }
+          </style>
+    </head>
+    <body>
+        <div id="field">
+            <img src="https://en.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+          </div>
+          <script>
+              let div = document.querySelector('#field');
+              let img = document.querySelector('img');
+              
+              ball.width = '40';
+              ball.height = '40';
+
+
+              let xField = Math.trunc(div.clientWidth / 2);
+              let yField = Math.trunc(div.clientHeight / 2);
+
+              let xBall = Math.trunc(img.offsetWidth / 2);
+              let yBall = Math.trunc(img.offsetHeight / 2);
+
+              let x = xField - xBall;
+              let y = yField - yBall;
+              
+              ball.style.top = y + 'px';
+              ball.style.left = x + 'px';
+              
+          </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modifying the document</title>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <!-- Insert the HTML in the list
+        importance: 5
+        Write the code to insert <li>2</li><li>3</li> between two <li> -->
+        <ul id="ul">
+            <li id="one">1</li>
+            <li id="two">4</li>
+        </ul>
+
+        <script>
+            let li = document.querySelector('li');
+            let newLi = document.createElement('li');
+            newLi.innerHTML = "<li>2</li><li>3</li>"
+            li.after(newLi);
+        </script>
+           
+    </body>
+</html>

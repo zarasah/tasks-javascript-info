@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coordinates</title>
+        <meta charset = "UTF-8">
+        <style>
+            #field {
+              width: 200px;
+              border: 10px groove black;
+              background-color: #00FF00;
+              position: relative;
+            }
+        
+          </style>
+        
+    </head>
+    <body>
+        <!-- Your code should use DOM to get window coordinates of:
+
+        1. Upper-left, outer corner (that's simple).
+        2. Bottom-right, outer corner (simple too).
+        3. Upper-left, inner corner (a bit harder).
+        4. Bottom-right, inner corner (there are several ways, choose one). -->
+
+        <div id="field">
+            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        </div>
+
+        <script>
+            const elem = document.querySelector('div');
+            const coord = elem.getBoundingClientRect();
+        // 1. Upper-left, outer corner
+            const upperLeftX = coord.x;
+            const upperLeftY = coord.y;
+        // 2. Bottom-right, outer corner
+            const bottomRightX = coord.right;
+            const bottomRightY = coord.bottom;
+        // 3. Upper-left, inner corner
+            const uppLInnerX = coord.left + elem.clientLeft;
+            const uppLInnerY = coord.top + elem.clientTop;
+        // 4. Bottom-right, inner corner
+            const bottRInnerX = uppLInnerX + elem.clientWidth;
+            const bottRInnerY = uppLInnerY + elem.clientHeight;
+
+            console.log('Upper-left, outer corner', 'x =', upperLeftX, 'y =', upperLeftY);
+            console.log('Bottom-right, outer corner', 'x =', bottomRightX, 'y =', bottomRightY);
+            console.log('Upper-left, inner corner', 'x =', uppLInnerX, 'y =', uppLInnerY);
+            console.log('Bottom-right, inner corner', 'x =', bottRInnerX, 'y =', bottRInnerY);
+        </script>
+
+    </body>
+</html>

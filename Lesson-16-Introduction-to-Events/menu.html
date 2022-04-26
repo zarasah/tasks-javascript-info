@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introduction to browser events</title>
+        <meta charset = "UTF-8">
+        <style>
+            span {
+               border: 1px solid;
+            }
+            ul {
+                list-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <span>Fruits Menu</span>
+            <ul>
+                <li>Apple</li>
+                <li>Apricot</li>
+                <li>Avocado</li>
+                <li>Cherry</li>
+                <li>Mango</li>
+            </ul>
+        </div>
+       <script>
+           const button = document.querySelector('span');
+           const menu = document.querySelector('ul');
+           menu.hidden = true;
+           button.onclick = function () {
+               if(menu.hidden) {
+                   menu.hidden = false;
+               } else {
+                   menu.hidden = true;
+               }
+           }
+       </script>
+    </body>
+</html>

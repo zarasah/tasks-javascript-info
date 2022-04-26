@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create a notification</title>
+        <meta charset = "utf-8">
+        <style>
+            h1 {
+                text-align: center;
+                font: timesnewroman;
+                color: red;
+                font-size: 50px;
+            }
+            p {
+                text-align: center;
+                font-size: 25px;
+            }
+            b {
+                color: rgb(255, 0, 0);
+            }
+            #first {
+                text-align: center;
+                font-size: 19px;
+            }
+            .notification {
+                font-size: 20px;
+                background-color: red;
+                border: solid;
+                border-color: red;
+
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My first page with CSS</h1>
+        <p>CSS is not hard to learn, if you recognise it for what it is!</p>
+        <div id = 'first'> <b>CSS</b> is the language we use to style an HTML document.<br/>
+            <b>CSS</b> describes how HTML elements are to be displayed on screen, paper, or in other media.<br/> 
+            <b>CSS</b> saves a lot of work. It can control the layout of multiple web pages all at once.</div>
+        <script>
+            function showNotification(top, right, className, html) {
+                let div = document.createElement('div');
+                div.className = className
+                div.style.position = 'absolute';
+                div.style.top = top + 'px';
+                div.style.right = right + 'px';
+                div.innerHTML = html;
+                document.body.append(div);
+
+                setTimeout(() => div.remove(), 1500);
+            }
+
+            showNotification(10, 20, 'notification', 'Done');
+        </script>
+        <script>
+            let divNew = document.querySelectorAll('div');
+            console.log(divNew[1])
+        </script>
+
+    </body>
+</html>
